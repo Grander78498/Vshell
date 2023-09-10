@@ -53,20 +53,18 @@ class MyCmd(cmd.Cmd):
         print(self.current_directory.replace('root', '/').replace('//', '/'))
 
     def do_cat(self, arg):
-        print("_" * 60)
         paths = [self.get_fullpath(elem) for elem in arg.split()]
         content = ""
         for path in paths:
             if path in self.file.getnames():
-                if os.path.isfile(path):
+                try:
                     read_file = self.file.extractfile(path)
                     content += read_file.read().decode()
                     read_file.close()
-                else:
+                except:
                     print("vshell: cat: Это каталог")
             else:
                 print(f"vshell: cat: {path}: Нет такого файла или каталога")
-        print(content, "_" * 60, sep="")
 
     def get_fullpath(self, arg):
         if arg[0:2] == "..":
