@@ -63,13 +63,9 @@ class MyCmd(cmd.Cmd):
                     content += read_file.read().decode()
                     read_file.close()
                 else:
-                    print("_" * 60)
                     print("vshell: cat: Это каталог")
-                    print("_" * 60)
             else:
-                print("_" * 60)
                 print(f"vshell: cat: {path}: Нет такого файла или каталога")
-                print("_" * 60)
         print(content, "_" * 60, sep="")
 
     def get_fullpath(self, arg):
