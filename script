@@ -1,0 +1,8 @@
+ls
+cd home
+cat hi
+cat hi hello.txt
+cd ../bin
+ls
+cd home
+cd trash
