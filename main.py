@@ -4,7 +4,7 @@ import cmd
 import os
 import argparse
 
-
+# Класс для обработки команд
 class MyCmd(cmd.Cmd):
     intro = "VShell 2023 Mirea\n\u00A9Все права не защищены\n================"
     prompt = "\033[1m\033[32muser@USER_PC: /$ \033[0m"
